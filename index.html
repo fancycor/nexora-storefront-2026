@@ -3,226 +3,95 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nexora Shop | Online Shopping</title>
+<meta name="theme-color" content="#071a16">
+<title>Nexora Shop | Smart Finds for Everyday Life</title>
 <style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;color:#183326;background:#fff}
-header{padding:18px 6%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #eee;gap:15px;flex-wrap:wrap}
-.logo{font-size:27px;font-weight:bold;color:#16834b}
-.search{padding:11px;border:1px solid #ddd;border-radius:8px;flex:1;max-width:400px}
-button{cursor:pointer;border:0;border-radius:7px;padding:11px 16px;font-weight:bold}
-.green{background:#16834b;color:white}
-nav{padding:15px 6%;display:flex;gap:25px;flex-wrap:wrap;background:#f6faf7}
-nav a{color:#234532;text-decoration:none}
-.hero{margin:28px auto;background:#e9f6ed;border-radius:18px;padding:45px 7%;max-width:1200px;display:flex;align-items:center;justify-content:space-between;gap:25px}
-.hero h1{font-size:clamp(30px,5vw,48px);margin:10px 0}
-.hero p{line-height:1.8;color:#566b5d}
-.hero-art{font-size:90px}
-main{max-width:1200px;margin:40px auto;padding:0 20px}
-.filters{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
-.filters button{background:#edf5ef;color:#234532}
-.filters button.active{background:#16834b;color:white}
-.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
-.card{border:1px solid #e4eae5;border-radius:13px;overflow:hidden;padding-bottom:15px}
-.picture{height:170px;display:flex;align-items:center;justify-content:center;background:#f3f7f3;font-size:65px}
-.info{padding:13px}
-.info h3{font-size:16px;min-height:40px}
-.price{font-size:20px;font-weight:bold;color:#16834b}
-.actions{display:flex;gap:6px;margin-top:12px}
-.actions button{flex:1;padding:10px 5px;font-size:12px}
-footer{background:#143326;color:white;padding:30px 6%;margin-top:45px;line-height:1.8}
-.modal{display:none;position:fixed;inset:0;background:#0008;align-items:center;justify-content:center;padding:15px;z-index:5}
-.modal-content{background:white;border-radius:15px;padding:24px;width:100%;max-width:480px;max-height:90vh;overflow:auto}
-.modal input,.modal select{width:100%;padding:12px;border:1px solid #ddd;border-radius:7px;margin:7px 0 14px}
-.modal label{font-size:14px;font-weight:bold}
-.modal .submit{width:100%;background:#16834b;color:white}
-.close{float:right;background:#eee}
-@media(max-width:800px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{margin:15px;padding:25px}.hero-art{font-size:55px}}
-@media(max-width:480px){header{padding:14px}.logo{font-size:23px}.search{order:3;max-width:none;flex-basis:100%}.hero{display:block}.hero-art{text-align:center;margin-top:20px}.grid{gap:10px}.picture{height:130px}.info{padding:9px}.info h3{font-size:14px}.actions{flex-direction:column}}
+:root{--ink:#10221d;--dark:#071a16;--green:#0b8065;--lime:#c8f169;--cream:#f7f8f3;--muted:#66736d;--line:#e6eae3;--white:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,Arial,"Noto Sans Bengali",sans-serif}a{color:inherit;text-decoration:none}button,input{font:inherit}.topbar{background:var(--dark);color:#d9e5de;text-align:center;padding:9px 12px;font-size:12px;letter-spacing:.3px}.topbar strong{color:var(--lime)}header{background:#fff;position:sticky;top:0;z-index:10;border-bottom:1px solid var(--line)}.nav{max-width:1200px;margin:auto;padding:16px 22px;display:flex;align-items:center;gap:24px}.brand{display:flex;align-items:center;gap:10px;min-width:190px}.brandmark{width:39px;height:39px;border-radius:13px;background:var(--dark);color:var(--lime);display:grid;place-items:center;font-weight:900;font-size:22px;transform:rotate(-4deg)}.brandname{font-weight:900;font-size:21px;letter-spacing:-.7px}.brandname span{color:var(--green)}.search{flex:1;display:flex;background:#f4f6f1;border:1px solid #e8ece5;border-radius:13px;padding:5px 6px 5px 14px;min-width:80px}.search input{width:100%;border:0;outline:0;background:transparent;padding:8px 3px;color:var(--ink)}.search button{border:0;background:var(--green);color:#fff;border-radius:9px;padding:9px 14px;cursor:pointer}.navlinks{display:flex;gap:18px;align-items:center;font-size:13px;font-weight:700;white-space:nowrap}.navlinks a:hover{color:var(--green)}.cart{border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:13px;font-weight:800;white-space:nowrap}.hero{max-width:1200px;margin:24px auto 0;padding:0 22px}.hero-panel{background:var(--dark);border-radius:26px;min-height:365px;overflow:hidden;position:relative;display:grid;grid-template-columns:1.05fr .95fr;color:#fff}.hero-copy{padding:55px 0 48px 52px;position:relative;z-index:1}.eyebrow{display:inline-flex;align-items:center;gap:8px;background:#18352b;color:var(--lime);border:1px solid #315443;border-radius:99px;padding:8px 12px;font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase}.eyebrow:before{content:"";width:6px;height:6px;border-radius:50%;background:var(--lime)}h1{font-size:clamp(34px,4.4vw,57px);line-height:1.08;letter-spacing:-2px;margin:22px 0 16px;max-width:540px}h1 em{font-style:normal;color:var(--lime)}.hero-copy p{color:#c3d0c9;line-height:1.8;font-size:14px;max-width:420px;margin:0 0 25px}.btn-primary,.btn-outline{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:12px;padding:13px 18px;font-weight:800;font-size:13px;cursor:pointer;transition:.2s}.btn-primary{background:var(--lime);color:var(--dark);border:0}.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 20px #c8f16925}.btn-outline{border:1px solid #476056;color:#fff;background:transparent;margin-left:8px}.hero-art{position:relative;min-height:300px;display:grid;place-items:center;background:radial-gradient(circle at 55% 50%,#285542 0, #102b22 38%,transparent 68%)}.hero-art:before,.hero-art:after{content:"";position:absolute;border:1px solid #a8d85d2c;border-radius:50%;width:300px;height:300px}.hero-art:after{width:220px;height:220px}.product-orb{width:205px;height:205px;border-radius:38px;background:linear-gradient(145deg,#f9faf5,#cbd7ca);display:grid;place-items:center;transform:rotate(7deg);box-shadow:0 35px 60px #0006;z-index:1;position:relative}.product-orb img{width:88%;height:88%;object-fit:contain;mix-blend-mode:multiply;transform:rotate(-7deg)}.float-tag{position:absolute;z-index:2;background:#fff;color:var(--ink);padding:12px 15px;border-radius:13px;font-size:12px;font-weight:800;box-shadow:0 12px 25px #0003}.float-tag small{display:block;color:var(--muted);font-size:10px;margin-top:4px;font-weight:500}.tag-one{top:48px;right:22px}.tag-two{bottom:42px;left:20px}.trust-row{max-width:1200px;margin:18px auto 0;padding:0 22px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.trust{background:#fff;border:1px solid var(--line);border-radius:15px;padding:16px;display:flex;align-items:center;gap:12px}.trust-icon{width:39px;height:39px;background:#edf6e5;border-radius:12px;display:grid;place-items:center;font-size:19px}.trust b{font-size:12px;display:block}.trust small{color:var(--muted);font-size:11px;display:block;margin-top:4px}.section{max-width:1200px;margin:58px auto 0;padding:0 22px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:22px}.kicker{color:var(--green);font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:1.4px}.section h2{font-size:29px;letter-spacing:-1px;margin:7px 0 0}.section-head p{color:var(--muted);font-size:13px;margin:8px 0 0}.text-link{font-size:13px;color:var(--green);font-weight:800;white-space:nowrap}.categories{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}.category{background:#fff;border:1px solid var(--line);border-radius:18px;padding:21px 16px;transition:.2s}.category:hover{border-color:#9bc8a9;transform:translateY(-3px)}.cat-icon{height:64px;border-radius:14px;background:#f1f5ec;display:grid;place-items:center;font-size:30px;margin-bottom:15px}.category b{font-size:14px}.category small{display:block;color:var(--muted);margin-top:5px;font-size:11px}.products{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.product{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:.2s;display:flex;flex-direction:column}.product:hover{transform:translateY(-4px);box-shadow:0 12px 30px #18352b0b}.product-image{height:205px;background:#f0f3ed;position:relative;display:grid;place-items:center;overflow:hidden}.product-image img{width:100%;height:100%;object-fit:contain;padding:18px;mix-blend-mode:multiply;transition:transform .3s}.product:hover .product-image img{transform:scale(1.05)}.pill{position:absolute;top:12px;left:12px;background:var(--lime);color:#193020;padding:6px 9px;border-radius:99px;font-size:10px;font-weight:900}.product-info{padding:15px;display:flex;flex-direction:column;flex:1}.product-cat{font-size:10px;color:var(--green);font-weight:900;text-transform:uppercase;letter-spacing:.8px}.product h3{font-size:14px;line-height:1.5;margin:8px 0 7px}.product-desc{font-size:11px;line-height:1.6;color:var(--muted);margin:0 0 13px}.price-row{display:flex;align-items:center;gap:8px;margin-top:auto;margin-bottom:13px}.price{font-size:18px;font-weight:900}.old-price{font-size:12px;color:#8c9790;text-decoration:line-through}.product-actions{display:grid;grid-template-columns:1fr 42px;gap:8px}.order-btn{border:0;background:var(--dark);color:#fff;border-radius:10px;padding:11px 8px;font-size:11px;font-weight:800;cursor:pointer}.order-btn:hover{background:var(--green)}.save-btn{border:1px solid var(--line);background:#fff;border-radius:10px;cursor:pointer;font-size:17px}.banner{max-width:1156px;margin:58px auto 0;padding:0 22px}.banner-inner{background:#e8f2df;border-radius:22px;padding:30px 35px;display:flex;justify-content:space-between;align-items:center;gap:20px}.banner h2{margin:0 0 8px;font-size:25px;letter-spacing:-.7px}.banner p{margin:0;color:#526458;font-size:13px;line-height:1.7}.banner .btn-primary{background:var(--dark);color:#fff;white-space:nowrap}.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}.about-card{background:var(--dark);border-radius:22px;padding:30px;color:#fff}.about-card h3{font-size:24px;margin:0 0 12px}.about-card p{color:#c1d0c8;font-size:13px;line-height:1.8;margin:0}.about-points{display:grid;grid-template-columns:1fr 1fr;gap:14px}.about-point{padding:18px;background:#fff;border:1px solid var(--line);border-radius:15px}.about-point b{font-size:13px}.about-point p{font-size:11px;line-height:1.6;color:var(--muted);margin:7px 0 0}.contact{background:#fff;border-top:1px solid var(--line);margin-top:60px}.contact-inner{max-width:1200px;margin:auto;padding:35px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px}.contact h2{font-size:22px;margin:0 0 8px}.contact p{font-size:12px;color:var(--muted);margin:0;line-height:1.7}.contact-actions{display:flex;gap:10px;flex-wrap:wrap}.whatsapp{background:#138a55;color:#fff;border:0;border-radius:12px;padding:13px 17px;font-weight:800;font-size:12px;cursor:pointer}.footer{background:var(--dark);color:#d7e2dc;padding:20px 22px}.footer-inner{max-width:1200px;margin:auto;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;font-size:11px}.footer span{color:#a9bcb1}.empty{grid-column:1/-1;background:#fff;border:1px dashed #cbd5ca;border-radius:15px;padding:30px;text-align:center;color:var(--muted)}#toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,20px);background:var(--dark);color:#fff;padding:12px 18px;border-radius:12px;font-size:13px;opacity:0;pointer-events:none;transition:.25s;z-index:20}#toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:900px){.nav{gap:12px}.brand{min-width:auto}.navlinks{display:none}.hero-copy{padding:40px 0 40px 32px}.hero-panel{grid-template-columns:1fr  .8fr}.categories{grid-template-columns:repeat(3,1fr)}.products{grid-template-columns:repeat(2,1fr)}.trust-row{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.topbar{font-size:10px}.nav{padding:12px 14px;gap:10px;flex-wrap:wrap}.brandname{font-size:19px}.brandmark{width:34px;height:34px}.brand{flex:1}.search{order:3;flex-basis:100%}.cart{padding:9px}.hero{padding:0 13px;margin-top:14px}.hero-panel{grid-template-columns:1fr;border-radius:20px}.hero-copy{padding:30px 23px 10px}h1{font-size:39px;letter-spacing:-1.5px}.hero-copy p{font-size:13px}.hero-art{min-height:220px}.product-orb{width:145px;height:145px;border-radius:27px}.hero-art:before{width:220px;height:220px}.hero-art:after{width:165px;height:165px}.tag-one{top:22px;right:10px}.tag-two{bottom:18px;left:9px}.trust-row{padding:0 13px;gap:8px}.trust{padding:11px;gap:8px}.trust-icon{width:32px;height:32px;font-size:16px}.trust b{font-size:11px}.trust small{font-size:10px}.section{padding:0 13px;margin-top:42px}.section h2{font-size:25px}.section-head{align-items:start}.section-head p{font-size:12px}.categories{grid-template-columns:repeat(2,1fr);gap:10px}.category{padding:14px}.cat-icon{height:52px;font-size:25px}.products{gap:10px}.product-image{height:150px}.product-image img{padding:10px}.product-info{padding:11px}.product h3{font-size:12px}.product-desc{font-size:10px}.price{font-size:16px}.old-price{font-size:10px}.order-btn{font-size:10px;padding:10px 4px}.product-actions{grid-template-columns:1fr 35px}.banner{padding:0 13px;margin-top:40px}.banner-inner{padding:23px;align-items:flex-start;flex-direction:column}.banner h2{font-size:22px}.about-grid{grid-template-columns:1fr}.about-points{gap:9px}.about-point{padding:13px}.contact-inner{padding:28px 16px;align-items:flex-start;flex-direction:column}.contact-actions{width:100%}.contact-actions>*{flex:1}.footer-inner{flex-direction:column}}
 </style>
 </head>
 <body>
-
+<div class="topbar">NEXORA SHOP-এ স্বাগতম · <strong>স্মার্ট পছন্দ, সাশ্রয়ী দাম</strong> · সারা বাংলাদেশে অর্ডার নেওয়া হয়</div>
 <header>
-  <div class="logo">Nexora Shop</div>
-  <input class="search" id="search" placeholder="পণ্য খুঁজুন..." oninput="renderProducts()">
-  <button class="green" onclick="openCart()">🛒 কার্ট (<span id="count">0</span>)</button>
+  <nav class="nav">
+    <a class="brand" href="#home" aria-label="Nexora Shop home"><div class="brandmark">N</div><div class="brandname">Nexora <span>Shop</span></div></a>
+    <form class="search" id="searchForm"><input id="searchInput" type="search" placeholder="আপনার পছন্দের পণ্য খুঁজুন..." aria-label="পণ্য খুঁজুন"><button type="submit">খুঁজুন</button></form>
+    <div class="navlinks"><a href="#categories">ক্যাটাগরি</a><a href="#products">পণ্যসমূহ</a><a href="#about">আমাদের সম্পর্কে</a></div>
+    <a class="cart" href="#products">🛍️ Shop Now</a>
+  </nav>
 </header>
-
-<nav>
-  <a href="#">হোম</a>
-  <a href="#products">সব পণ্য</a>
-  <a href="#products" onclick="setCategory('ইলেকট্রনিক্স')">ইলেকট্রনিক্স</a>
-  <a href="#products" onclick="setCategory('ঘর ও রান্নাঘর')">ঘর ও রান্নাঘর</a>
-  <a href="#contact">যোগাযোগ</a>
-</nav>
-
-<section class="hero">
-  <div>
-    <div style="color:#16834b;font-weight:bold">স্বাগতম Nexora Shop-এ</div>
-    <h1>স্মার্ট শপিং,<br>সহজ জীবন!</h1>
-    <p>আপনার দৈনন্দিন প্রয়োজনের পণ্য কিনুন সহজেই।<br>পছন্দের পণ্য বেছে নিয়ে অর্ডার করুন ঘরে বসে।</p>
-    <a href="#products"><button class="green">পণ্য দেখুন →</button></a>
+<main id="home">
+<section class="hero"><div class="hero-panel">
+  <div class="hero-copy">
+    <div class="eyebrow">Everyday essentials, reimagined</div>
+    <h1>আপনার প্রতিদিনের<br>স্মার্ট পছন্দ <em>এখানেই।</em></h1>
+    <p>গ্যাজেট থেকে হোম অ্যাকসেসরিজ—দৈনন্দিন জীবনের দরকারি পণ্য বেছে নিন সহজে, অর্ডার করুন নিশ্চিন্তে।</p>
+    <a class="btn-primary" href="#products">পণ্য দেখুন <span>↗</span></a><a class="btn-outline" href="#categories">ক্যাটাগরি দেখুন</a>
   </div>
-  <div class="hero-art">🛍️📦</div>
+  <div class="hero-art">
+    <div class="float-tag tag-one">SMART FINDS<small>দরকারি পণ্য এক জায়গায়</small></div>
+    <div class="product-orb"><img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=500&q=85" alt="Everyday gadget"></div>
+    <div class="float-tag tag-two">NEXORA PICK <small>আপনার দৈনন্দিন সঙ্গী</small></div>
+  </div>
+</div></section>
+<section class="trust-row" aria-label="সেবার সুবিধা">
+  <div class="trust"><div class="trust-icon">📦</div><div><b>সহজ অর্ডার</b><small>সহজে পছন্দ ও অর্ডার</small></div></div>
+  <div class="trust"><div class="trust-icon">💬</div><div><b>সরাসরি যোগাযোগ</b><small>WhatsApp-এ কথা বলুন</small></div></div>
+  <div class="trust"><div class="trust-icon">✨</div><div><b>বিভিন্ন ধরনের পণ্য</b><small>এক জায়গায় অনেক কিছু</small></div></div>
+  <div class="trust"><div class="trust-icon">🚚</div><div><b>ডেলিভারি তথ্য</b><small>অর্ডারের আগে নিশ্চিত করুন</small></div></div>
 </section>
-
-<main id="products">
-  <h2>আমাদের পণ্য</h2>
-  <p>আপনার পছন্দের পণ্য বেছে নিন</p>
-
-  <div class="filters">
-    <button class="active" onclick="setCategory('সব',this)">সব পণ্য</button>
-    <button onclick="setCategory('ইলেকট্রনিক্স',this)">ইলেকট্রনিক্স</button>
-    <button onclick="setCategory('ঘর ও রান্নাঘর',this)">ঘর ও রান্নাঘর</button>
-    <button onclick="setCategory('দৈনন্দিন ব্যবহার',this)">দৈনন্দিন ব্যবহার</button>
+<section class="section" id="categories">
+  <div class="section-head"><div><div class="kicker">Explore by category</div><h2>কী খুঁজছেন আজ?</h2><p>আপনার প্রয়োজন অনুযায়ী পণ্য বেছে নিন।</p></div><a class="text-link" href="#products">সব পণ্য দেখুন ↗</a></div>
+  <div class="categories">
+    <a class="category" href="#products" data-category="গ্যাজেট"><div class="cat-icon">🎧</div><b>গ্যাজেট ও অ্যাকসেসরিজ</b><small>স্মার্ট দৈনন্দিন পণ্য</small></a>
+    <a class="category" href="#products" data-category="ইলেকট্রিক"><div class="cat-icon">🔦</div><b>ইলেকট্রিক ও লাইট</b><small>টর্চ, লাইট ও আরও</small></a>
+    <a class="category" href="#products" data-category="হোম"><div class="cat-icon">🏠</div><b>হোম ও কিচেন</b><small>ঘরের দরকারি জিনিস</small></a>
+    <a class="category" href="#products" data-category="ক্লিনিং"><div class="cat-icon">🧹</div><b>ক্লিনিং টুলস</b><small>পরিষ্কার রাখুন সহজে</small></a>
+    <a class="category" href="#products" data-category="অন্যান্য"><div class="cat-icon">🎁</div><b>অন্যান্য পণ্য</b><small>নতুন নতুন কালেকশন</small></a>
   </div>
-
-  <div class="grid" id="grid"></div>
+</section>
+<section class="section" id="products">
+  <div class="section-head"><div><div class="kicker">Featured collection</div><h2>জনপ্রিয় পণ্য</h2><p>নিচের পণ্যগুলো নমুনা হিসেবে দেওয়া—নিজের পণ্য ও দাম বসিয়ে নিন।</p></div><a class="text-link" href="#contact">অর্ডার সহায়তা ↗</a></div>
+  <div class="products" id="productGrid"></div>
+</section>
+<section class="banner"><div class="banner-inner"><div><h2>আপনার পছন্দের পণ্য খুঁজে পাচ্ছেন না?</h2><p>আমাদের সঙ্গে যোগাযোগ করুন। পণ্যের নাম বা ছবি পাঠিয়ে জানতে পারেন।</p></div><button class="btn-primary" onclick="contactWhatsApp('আসসালামু আলাইকুম, আমি একটি পণ্য সম্পর্কে জানতে চাই।')">WhatsApp-এ যোগাযোগ করুন ↗</button></div></section>
+<section class="section" id="about"><div class="about-grid">
+  <div><div class="kicker">Why Nexora Shop</div><h2>সহজ কেনাকাটা,<br>স্মার্ট অভিজ্ঞতা।</h2><p style="color:var(--muted);font-size:13px;line-height:1.9">Nexora Shop-এ বিভিন্ন ধরনের দরকারি পণ্য এক জায়গায় তুলে ধরার লক্ষ্য। পণ্যের দাম, স্টক, ডেলিভারি চার্জ ও সময় অর্ডার নিশ্চিত করার আগে জেনে নিন।</p></div>
+  <div class="about-points"><div class="about-point"><b>01 · পছন্দের স্বাধীনতা</b><p>বিভিন্ন ক্যাটাগরির পণ্য এক জায়গায় দেখুন।</p></div><div class="about-point"><b>02 · সহজ যোগাযোগ</b><p>পণ্যের বিষয়ে সরাসরি প্রশ্ন করুন।</p></div><div class="about-point"><b>03 · পরিষ্কার তথ্য</b><p>অর্ডারের আগে দাম ও ডেলিভারি নিশ্চিত করুন।</p></div><div class="about-point"><b>04 · আপনার সুবিধা</b><p>মোবাইল ও কম্পিউটার—দুই জায়গাতেই ব্যবহারযোগ্য।</p></div></div>
+</div></section>
+<section class="contact" id="contact"><div class="contact-inner"><div><h2>Nexora Shop-এর সঙ্গে যোগাযোগ</h2><p>অর্ডার করতে পণ্যের নাম ও পরিমাণ জানান।<br>WhatsApp নম্বরটি চালু করার আগে নিচের কোডে নিজের নম্বর বসাতে হবে।</p></div><div class="contact-actions"><button class="whatsapp" onclick="contactWhatsApp('আসসালামু আলাইকুম, Nexora Shop থেকে অর্ডার করতে চাই।')">☏ WhatsApp-এ অর্ডার</button><a class="btn-primary" style="background:var(--cream);color:var(--ink);border:1px solid var(--line)" href="#products">পণ্য দেখুন ↓</a></div></div></section>
 </main>
-
-<footer id="contact">
-  <h2>Nexora Shop</h2>
-  <p>আপনার অনলাইন শপিং সঙ্গী।</p>
-  <p>অর্ডার ও পণ্যের তথ্যের জন্য আমাদের সঙ্গে যোগাযোগ করুন।</p>
-  <small>© 2026 Nexora Shop. All rights reserved.</small>
-</footer>
-
-<div class="modal" id="modal">
-  <div class="modal-content">
-    <button class="close" onclick="closeModal()">বন্ধ ✕</button>
-    <h2>আপনার অর্ডার</h2>
-    <form id="orderForm">
-      <label>পণ্য</label>
-      <select id="productSelect"></select>
-
-      <label>পরিমাণ</label>
-      <input id="qty" type="number" min="1" value="1" required>
-
-      <label>আপনার নাম</label>
-      <input id="name" required placeholder="সম্পূর্ণ নাম">
-
-      <label>মোবাইল নম্বর</label>
-      <input id="phone" type="tel" required placeholder="01XXXXXXXXX">
-
-      <label>জেলা ও থানা</label>
-      <input id="district" required placeholder="জেলা, থানা">
-
-      <label>সম্পূর্ণ ঠিকানা</label>
-      <input id="address" required placeholder="বাসা, রাস্তা, এলাকা">
-
-      <p><b>পণ্যের মোট: ৳<span id="total">0</span></b></p>
-      <p>পেমেন্ট: Cash on Delivery (COD)</p>
-      <button class="submit" type="submit">WhatsApp-এ অর্ডার করুন</button>
-    </form>
-  </div>
-</div>
-
+<footer class="footer"><div class="footer-inner"><div><strong>Nexora Shop</strong> <span>— Smart Finds for Everyday Life</span></div><div>© <span id="year"></span> Nexora Shop. সর্বস্বত্ব সংরক্ষিত।</div></div></footer>
+<div id="toast" role="status"></div>
 <script>
-// নমুনা পণ্য। পরে নিজের পণ্যের নাম ও দাম পরিবর্তন করবেন।
-const products=[
-{id:1,name:"LED Temperature Display Bottle",cat:"ঘর ও রান্নাঘর",price:650,emoji:"🥤"},
-{id:2,name:"Rechargeable LED Torch Light",cat:"ইলেকট্রনিক্স",price:450,emoji:"🔦"},
-{id:3,name:"20-in-1 Cleaning Tool Set",cat:"ইলেকট্রনিক্স",price:390,emoji:"🧰"},
-{id:4,name:"Portable USB Desk Fan",cat:"ইলেকট্রনিক্স",price:520,emoji:"🌀"},
-{id:5,name:"Kitchen Storage Organizer",cat:"ঘর ও রান্নাঘর",price:350,emoji:"🧺"},
-{id:6,name:"Reusable Water Bottle",cat:"দৈনন্দিন ব্যবহার",price:280,emoji:"🚰"},
-{id:7,name:"Mini Screwdriver Kit",cat:"ইলেকট্রনিক্স",price:790,emoji:"🪛"},
-{id:8,name:"Multi-purpose Storage Box",cat:"ঘর ও রান্নাঘর",price:320,emoji:"📦"}
+/* IMPORTANT: Replace the placeholder with your WhatsApp number including country code, digits only.
+   Bangladesh example format: 8801XXXXXXXXX (do not add +, spaces, or dashes). */
+const WHATSAPP_NUMBER = "8801913381682";
+const products = [
+ {id:1,name:"450ML LED Temperature Display Bottle",cat:"হোম",price:"৳ 450",old:"৳ 600",tag:"জনপ্রিয়",desc:"তাপমাত্রা দেখানো যায় এমন ট্রাভেল বোতল।",img:"https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=600&q=85"},
+ {id:2,name:"Rechargeable LED Torch Light",cat:"ইলেকট্রিক",price:"৳ 350",old:"৳ 450",tag:"দৈনন্দিন",desc:"বাসা, ভ্রমণ ও জরুরি প্রয়োজনে কাজে লাগে।",img:"https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=600&q=85"},
+ {id:3,name:"20-in-1 Cleaning Tool Set",cat:"ক্লিনিং",price:"৳ 550",old:"৳ 700",tag:"নতুন",desc:"ছোট গ্যাজেট ও সরু জায়গা পরিষ্কারের টুলস।",img:"https://images.unsplash.com/photo-1585421514284-efb74c2b69ba?auto=format&fit=crop&w=600&q=85"},
+ {id:4,name:"Portable Mini Gadget",cat:"গ্যাজেট",price:"৳ 650",old:"৳ 800",tag:"স্মার্ট পিক",desc:"দৈনন্দিন ব্যবহারের জন্য কমপ্যাক্ট অ্যাকসেসরিজ।",img:"https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=85"},
+ {id:5,name:"USB Rechargeable Work Light",cat:"ইলেকট্রিক",price:"৳ 480",old:"৳ 600",tag:"ব্যবহারিক",desc:"কাজের জায়গা বা ঘরের জন্য সহায়ক আলো।",img:"https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=600&q=85"},
+ {id:6,name:"Home Storage Organizer",cat:"হোম",price:"৳ 390",old:"৳ 500",tag:"হোম ফেভারিট",desc:"ঘরের জিনিস গুছিয়ে রাখতে ব্যবহার করুন।",img:"https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&w=600&q=85"},
+ {id:7,name:"Everyday Travel Accessory",cat:"গ্যাজেট",price:"৳ 320",old:"৳ 420",tag:"কমপ্যাক্ট",desc:"ভ্রমণ ও প্রতিদিনের ব্যবহারের জন্য।",img:"https://images.unsplash.com/photo-1523206489230-c012c64b2b48?auto=format&fit=crop&w=600&q=85"},
+ {id:8,name:"Useful Daily Essentials",cat:"অন্যান্য",price:"৳ 250",old:"৳ 350",tag:"ভ্যালু পিক",desc:"দৈনন্দিন প্রয়োজনের একটি ব্যবহারিক পণ্য।",img:"https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=600&q=85"}
 ];
-
-// এখানে আপনার ব্যবসার WhatsApp নম্বর বসাবেন।
-// উদাহরণ: 8801XXXXXXXXX (শুধু নম্বর, + চিহ্ন ছাড়া)
-const WHATSAPP_NUMBER="8801913381682";
-
-let category="সব";
-let cart={};
-
-function renderProducts(){
- const q=document.getElementById("search").value.toLowerCase();
- const list=products.filter(p=>
- (category==="সব"||p.cat===category)&&p.name.toLowerCase().includes(q)
- );
- document.getElementById("grid").innerHTML=list.map(p=>`
- <article class="card">
-   <div class="picture">${p.emoji}</div>
-   <div class="info">
-     <small>${p.cat}</small>
-     <h3>${p.name}</h3>
-     <div class="price">৳${p.price}</div>
-     <div class="actions">
-       <button onclick="addCart(${p.id})">কার্টে রাখুন</button>
-       <button class="green" onclick="buyNow(${p.id})">অর্ডার</button>
-     </div>
-   </div>
- </article>`).join("")||"<p>কোনো পণ্য পাওয়া যায়নি।</p>";
+const grid=document.getElementById("productGrid");
+function renderProducts(list){
+ if(!list.length){grid.innerHTML='<div class="empty">কোনো পণ্য পাওয়া যায়নি। অন্য নামে খুঁজে দেখুন।</div>';return}
+ grid.innerHTML=list.map(p=>`<article class="product"><div class="product-image"><span class="pill">${p.tag}</span><img loading="lazy" src="${p.img}" alt="${p.name}"></div><div class="product-info"><div class="product-cat">${p.cat}</div><h3>${p.name}</h3><p class="product-desc">${p.desc}</p><div class="price-row"><span class="price">${p.price}</span><span class="old-price">${p.old}</span></div><div class="product-actions"><button class="order-btn" onclick="orderProduct(${p.id})">WhatsApp-এ অর্ডার</button><button class="save-btn" aria-label="পণ্য সম্পর্কে জানতে" onclick="askProduct(${p.id})">♡</button></div></div></article>`).join("");
 }
-
-function setCategory(c,btn){
- category=c;
- document.querySelectorAll(".filters button").forEach(b=>b.classList.remove("active"));
- if(btn)btn.classList.add("active");
- else document.querySelectorAll(".filters button").forEach(b=>{if(b.textContent===c)b.classList.add("active")});
- renderProducts();
-}
-
-function addCart(id){
- cart[id]=(cart[id]||0)+1;
- document.getElementById("count").textContent=Object.values(cart).reduce((a,b)=>a+b,0);
- alert("পণ্যটি কার্টে যোগ হয়েছে!");
-}
-
-function openCart(){
- const id=Number(Object.keys(cart)[0]);
- if(!id){alert("আপনার কার্ট খালি। আগে পণ্য যোগ করুন।");return;}
- buyNow(id);
- document.getElementById("qty").value=Object.values(cart).reduce((a,b)=>a+b,0);
- updateTotal();
-}
-
-function buyNow(id){
- const select=document.getElementById("productSelect");
- select.innerHTML=products.map(p=>`<option value="${p.id}">${p.name} — ৳${p.price}</option>`).join("");
- select.value=id;
- document.getElementById("qty").value=1;
- document.getElementById("modal").style.display="flex";
- updateTotal();
-}
-
-function closeModal(){document.getElementById("modal").style.display="none"}
-
-function updateTotal(){
- const p=products.find(x=>x.id===Number(document.getElementById("productSelect").value));
- const qty=Math.max(1,Number(document.getElementById("qty").value)||1);
- document.getElementById("total").textContent=p?p.price*qty:0;
-}
-
-document.getElementById("productSelect").addEventListener("change",updateTotal);
-document.getElementById("qty").addEventListener("input",updateTotal);
-
-document.getElementById("orderForm").addEventListener("submit",function(e){
- e.preventDefault();
- const p=products.find(x=>x.id===Number(document.getElementById("productSelect").value));
- const qty=Math.max(1,Number(document.getElementById("qty").value)||1);
- const name=document.getElementById("name").value.trim();
- const phone=document.getElementById("phone").value.trim();
- const district=document.getElementById("district").value.trim();
- const address=document.getElementById("address").value.trim();
-
- const message=`Nexora Shop Order\nProduct: ${p.name}\nQuantity: ${qty}\nTotal: Tk ${p.price*qty}\nName: ${name}\nPhone: ${phone}\nDistrict/Thana: ${district}\nAddress: ${address}\nPayment: Cash on Delivery`;
-
- const WHATSAPP_NUMBER="8801913381682";
-   window.open("https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(message),"_blank");
- }else{
-   alert("WhatsApp নম্বর এখনো সেট করা হয়নি। অর্ডারের বিবরণ:\n\n"+message);
- }
-});
-
-document.getElementById("modal").addEventListener("click",function(e){
- if(e.target===this)closeModal();
-});
-
-renderProducts();
+function showToast(msg){const t=document.getElementById("toast");t.textContent=msg;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),3000)}
+function contactWhatsApp(message){if(WHATSAPP_NUMBER.includes("X")){showToast("আগে কোডে WHATSAPP_NUMBER-এ নিজের নম্বর বসান।");return}window.open("https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(message),"_blank","noopener")}
+function orderProduct(id){const p=products.find(x=>x.id===id);contactWhatsApp(`আসসালামু আলাইকুম, আমি এই পণ্যটি অর্ডার করতে চাই:\nপণ্য: ${p.name}\nদাম: ${p.price}\nপরিমাণ: 1টি\nআমার ঠিকানা ও ডেলিভারি চার্জ জানাবেন।`)}
+function askProduct(id){const p=products.find(x=>x.id===id);contactWhatsApp(`আসসালামু আলাইকুম, ${p.name} পণ্যটি সম্পর্কে বিস্তারিত জানতে চাই।`)}
+document.getElementById("searchForm").addEventListener("submit",e=>{e.preventDefault();const q=document.getElementById("searchInput").value.trim().toLowerCase();renderProducts(products.filter(p=>(p.name+" "+p.cat+" "+p.desc).toLowerCase().includes(q)));document.getElementById("products").scrollIntoView({behavior:"smooth"})});
+document.querySelectorAll("[data-category]").forEach(el=>el.addEventListener("click",()=>{const c=el.dataset.category;renderProducts(products.filter(p=>p.cat===c));}));
+document.getElementById("year").textContent=new Date().getFullYear();
+renderProducts(products);
 </script>
 </body>
 </html>

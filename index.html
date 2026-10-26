@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexora Shop | Online Shopping</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;color:#183326;background:#fff}
+header{padding:18px 6%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #eee;gap:15px;flex-wrap:wrap}
+.logo{font-size:27px;font-weight:bold;color:#16834b}
+.search{padding:11px;border:1px solid #ddd;border-radius:8px;flex:1;max-width:400px}
+button{cursor:pointer;border:0;border-radius:7px;padding:11px 16px;font-weight:bold}
+.green{background:#16834b;color:white}
+nav{padding:15px 6%;display:flex;gap:25px;flex-wrap:wrap;background:#f6faf7}
+nav a{color:#234532;text-decoration:none}
+.hero{margin:28px auto;background:#e9f6ed;border-radius:18px;padding:45px 7%;max-width:1200px;display:flex;align-items:center;justify-content:space-between;gap:25px}
+.hero h1{font-size:clamp(30px,5vw,48px);margin:10px 0}
+.hero p{line-height:1.8;color:#566b5d}
+.hero-art{font-size:90px}
+main{max-width:1200px;margin:40px auto;padding:0 20px}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
+.filters button{background:#edf5ef;color:#234532}
+.filters button.active{background:#16834b;color:white}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.card{border:1px solid #e4eae5;border-radius:13px;overflow:hidden;padding-bottom:15px}
+.picture{height:170px;display:flex;align-items:center;justify-content:center;background:#f3f7f3;font-size:65px}
+.info{padding:13px}
+.info h3{font-size:16px;min-height:40px}
+.price{font-size:20px;font-weight:bold;color:#16834b}
+.actions{display:flex;gap:6px;margin-top:12px}
+.actions button{flex:1;padding:10px 5px;font-size:12px}
+footer{background:#143326;color:white;padding:30px 6%;margin-top:45px;line-height:1.8}
+.modal{display:none;position:fixed;inset:0;background:#0008;align-items:center;justify-content:center;padding:15px;z-index:5}
+.modal-content{background:white;border-radius:15px;padding:24px;width:100%;max-width:480px;max-height:90vh;overflow:auto}
+.modal input,.modal select{width:100%;padding:12px;border:1px solid #ddd;border-radius:7px;margin:7px 0 14px}
+.modal label{font-size:14px;font-weight:bold}
+.modal .submit{width:100%;background:#16834b;color:white}
+.close{float:right;background:#eee}
+@media(max-width:800px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{margin:15px;padding:25px}.hero-art{font-size:55px}}
+@media(max-width:480px){header{padding:14px}.logo{font-size:23px}.search{order:3;max-width:none;flex-basis:100%}.hero{display:block}.hero-art{text-align:center;margin-top:20px}.grid{gap:10px}.picture{height:130px}.info{padding:9px}.info h3{font-size:14px}.actions{flex-direction:column}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Nexora Shop</div>
+  <input class="search" id="search" placeholder="পণ্য খুঁজুন..." oninput="renderProducts()">
+  <button class="green" onclick="openCart()">🛒 কার্ট (<span id="count">0</span>)</button>
+</header>
+
+<nav>
+  <a href="#">হোম</a>
+  <a href="#products">সব পণ্য</a>
+  <a href="#products" onclick="setCategory('ইলেকট্রনিক্স')">ইলেকট্রনিক্স</a>
+  <a href="#products" onclick="setCategory('ঘর ও রান্নাঘর')">ঘর ও রান্নাঘর</a>
+  <a href="#contact">যোগাযোগ</a>
+</nav>
+
+<section class="hero">
+  <div>
+    <div style="color:#16834b;font-weight:bold">স্বাগতম Nexora Shop-এ</div>
+    <h1>স্মার্ট শপিং,<br>সহজ জীবন!</h1>
+    <p>আপনার দৈনন্দিন প্রয়োজনের পণ্য কিনুন সহজেই।<br>পছন্দের পণ্য বেছে নিয়ে অর্ডার করুন ঘরে বসে।</p>
+    <a href="#products"><button class="green">পণ্য দেখুন →</button></a>
+  </div>
+  <div class="hero-art">🛍️📦</div>
+</section>
+
+<main id="products">
+  <h2>আমাদের পণ্য</h2>
+  <p>আপনার পছন্দের পণ্য বেছে নিন</p>
+
+  <div class="filters">
+    <button class="active" onclick="setCategory('সব',this)">সব পণ্য</button>
+    <button onclick="setCategory('ইলেকট্রনিক্স',this)">ইলেকট্রনিক্স</button>
+    <button onclick="setCategory('ঘর ও রান্নাঘর',this)">ঘর ও রান্নাঘর</button>
+    <button onclick="setCategory('দৈনন্দিন ব্যবহার',this)">দৈনন্দিন ব্যবহার</button>
+  </div>
+
+  <div class="grid" id="grid"></div>
+</main>
+
+<footer id="contact">
+  <h2>Nexora Shop</h2>
+  <p>আপনার অনলাইন শপিং সঙ্গী।</p>
+  <p>অর্ডার ও পণ্যের তথ্যের জন্য আমাদের সঙ্গে যোগাযোগ করুন।</p>
+  <small>© 2026 Nexora Shop. All rights reserved.</small>
+</footer>
+
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <button class="close" onclick="closeModal()">বন্ধ ✕</button>
+    <h2>আপনার অর্ডার</h2>
+    <form id="orderForm">
+      <label>পণ্য</label>
+      <select id="productSelect"></select>
+
+      <label>পরিমাণ</label>
+      <input id="qty" type="number" min="1" value="1" required>
+
+      <label>আপনার নাম</label>
+      <input id="name" required placeholder="সম্পূর্ণ নাম">
+
+      <label>মোবাইল নম্বর</label>
+      <input id="phone" type="tel" required placeholder="01XXXXXXXXX">
+
+      <label>জেলা ও থানা</label>
+      <input id="district" required placeholder="জেলা, থানা">
+
+      <label>সম্পূর্ণ ঠিকানা</label>
+      <input id="address" required placeholder="বাসা, রাস্তা, এলাকা">
+
+      <p><b>পণ্যের মোট: ৳<span id="total">0</span></b></p>
+      <p>পেমেন্ট: Cash on Delivery (COD)</p>
+      <button class="submit" type="submit">WhatsApp-এ অর্ডার করুন</button>
+    </form>
+  </div>
+</div>
+
+<script>
+// নমুনা পণ্য। পরে নিজের পণ্যের নাম ও দাম পরিবর্তন করবেন।
+const products=[
+{id:1,name:"LED Temperature Display Bottle",cat:"ঘর ও রান্নাঘর",price:650,emoji:"🥤"},
+{id:2,name:"Rechargeable LED Torch Light",cat:"ইলেকট্রনিক্স",price:450,emoji:"🔦"},
+{id:3,name:"20-in-1 Cleaning Tool Set",cat:"ইলেকট্রনিক্স",price:390,emoji:"🧰"},
+{id:4,name:"Portable USB Desk Fan",cat:"ইলেকট্রনিক্স",price:520,emoji:"🌀"},
+{id:5,name:"Kitchen Storage Organizer",cat:"ঘর ও রান্নাঘর",price:350,emoji:"🧺"},
+{id:6,name:"Reusable Water Bottle",cat:"দৈনন্দিন ব্যবহার",price:280,emoji:"🚰"},
+{id:7,name:"Mini Screwdriver Kit",cat:"ইলেকট্রনিক্স",price:790,emoji:"🪛"},
+{id:8,name:"Multi-purpose Storage Box",cat:"ঘর ও রান্নাঘর",price:320,emoji:"📦"}
+];
+
+// এখানে আপনার ব্যবসার WhatsApp নম্বর বসাবেন।
+// উদাহরণ: 8801XXXXXXXXX (শুধু নম্বর, + চিহ্ন ছাড়া)
+const WHATSAPP_NUMBER="";
+
+let category="সব";
+let cart={};
+
+function renderProducts(){
+ const q=document.getElementById("search").value.toLowerCase();
+ const list=products.filter(p=>
+ (category==="সব"||p.cat===category)&&p.name.toLowerCase().includes(q)
+ );
+ document.getElementById("grid").innerHTML=list.map(p=>`
+ <article class="card">
+   <div class="picture">${p.emoji}</div>
+   <div class="info">
+     <small>${p.cat}</small>
+     <h3>${p.name}</h3>
+     <div class="price">৳${p.price}</div>
+     <div class="actions">
+       <button onclick="addCart(${p.id})">কার্টে রাখুন</button>
+       <button class="green" onclick="buyNow(${p.id})">অর্ডার</button>
+     </div>
+   </div>
+ </article>`).join("")||"<p>কোনো পণ্য পাওয়া যায়নি।</p>";
+}
+
+function setCategory(c,btn){
+ category=c;
+ document.querySelectorAll(".filters button").forEach(b=>b.classList.remove("active"));
+ if(btn)btn.classList.add("active");
+ else document.querySelectorAll(".filters button").forEach(b=>{if(b.textContent===c)b.classList.add("active")});
+ renderProducts();
+}
+
+function addCart(id){
+ cart[id]=(cart[id]||0)+1;
+ document.getElementById("count").textContent=Object.values(cart).reduce((a,b)=>a+b,0);
+ alert("পণ্যটি কার্টে যোগ হয়েছে!");
+}
+
+function openCart(){
+ const id=Number(Object.keys(cart)[0]);
+ if(!id){alert("আপনার কার্ট খালি। আগে পণ্য যোগ করুন।");return;}
+ buyNow(id);
+ document.getElementById("qty").value=Object.values(cart).reduce((a,b)=>a+b,0);
+ updateTotal();
+}
+
+function buyNow(id){
+ const select=document.getElementById("productSelect");
+ select.innerHTML=products.map(p=>`<option value="${p.id}">${p.name} — ৳${p.price}</option>`).join("");
+ select.value=id;
+ document.getElementById("qty").value=1;
+ document.getElementById("modal").style.display="flex";
+ updateTotal();
+}
+
+function closeModal(){document.getElementById("modal").style.display="none"}
+
+function updateTotal(){
+ const p=products.find(x=>x.id===Number(document.getElementById("productSelect").value));
+ const qty=Math.max(1,Number(document.getElementById("qty").value)||1);
+ document.getElementById("total").textContent=p?p.price*qty:0;
+}
+
+document.getElementById("productSelect").addEventListener("change",updateTotal);
+document.getElementById("qty").addEventListener("input",updateTotal);
+
+document.getElementById("orderForm").addEventListener("submit",function(e){
+ e.preventDefault();
+ const p=products.find(x=>x.id===Number(document.getElementById("productSelect").value));
+ const qty=Math.max(1,Number(document.getElementById("qty").value)||1);
+ const name=document.getElementById("name").value.trim();
+ const phone=document.getElementById("phone").value.trim();
+ const district=document.getElementById("district").value.trim();
+ const address=document.getElementById("address").value.trim();
+
+ const message=`Nexora Shop Order\nProduct: ${p.name}\nQuantity: ${qty}\nTotal: Tk ${p.price*qty}\nName: ${name}\nPhone: ${phone}\nDistrict/Thana: ${district}\nAddress: ${address}\nPayment: Cash on Delivery`;
+
+ if(WHATSAPP_NUMBER){
+   window.open("https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(message),"_blank");
+ }else{
+   alert("WhatsApp নম্বর এখনো সেট করা হয়নি। অর্ডারের বিবরণ:\n\n"+message);
+ }
+});
+
+document.getElementById("modal").addEventListener("click",function(e){
+ if(e.target===this)closeModal();
+});
+
+renderProducts();
+</script>
+</body>
+</html>

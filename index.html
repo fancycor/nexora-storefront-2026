@@ -69,6 +69,7 @@
 /* IMPORTANT: Replace the placeholder with your WhatsApp number including country code, digits only.
    Bangladesh example format: 8801XXXXXXXXX (do not add +, spaces, or dashes). */
 const WHATSAPP_NUMBER = "8801913381682";
+
 const products = [
  {id:1,name:"450ML LED Temperature Display Bottle",cat:"হোম",price:"৳ 550",old:"৳ 600",tag:"জনপ্রিয়",desc:"তাপমাত্রা দেখানো যায় এমন ট্রাভেল বোতল।",img:"450ml-Stainless-Steel-Coffee-Cup-Smart-LED-Temperature-Display-Thermos-Bottle-Coffee-Mug-Travel-Mug-Insulated.avif"},
  {id:2,name:"Rechargeable LED Torch Light",cat:"ইলেকট্রিক",price:"৳ 350",old:"৳ 450",tag:"দৈনন্দিন",desc:"বাসা, ভ্রমণ ও জরুরি প্রয়োজনে কাজে লাগে।",img:"https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=600&q=85"},
@@ -77,8 +78,10 @@ const products = [
  {id:5,name:"USB Rechargeable Work Light",cat:"ইলেকট্রিক",price:"৳ 480",old:"৳ 600",tag:"ব্যবহারিক",desc:"কাজের জায়গা বা ঘরের জন্য সহায়ক আলো।",img:"https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=600&q=85"},
  {id:6,name:"Home Storage Organizer",cat:"হোম",price:"৳ 390",old:"৳ 500",tag:"হোম ফেভারিট",desc:"ঘরের জিনিস গুছিয়ে রাখতে ব্যবহার করুন।",img:"https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&w=600&q=85"},
  {id:7,name:"Everyday Travel Accessory",cat:"গ্যাজেট",price:"৳ 320",old:"৳ 420",tag:"কমপ্যাক্ট",desc:"ভ্রমণ ও প্রতিদিনের ব্যবহারের জন্য।",img:"https://images.unsplash.com/photo-1523206489230-c012c64b2b48?auto=format&fit=crop&w=600&q=85"},
- {id:8,name:"Useful Daily Essentials",cat:"অন্যান্য",price:"৳ 250",old:"৳ 350",tag:"ভ্যালু পিক",desc:"দৈনন্দিন প্রয়োজনের একটি ব্যবহারিক পণ্য।",img:"https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=600&q=85"}
+ {id:8,name:"Useful Daily Essentials",cat:"অন্যান্য",price:"৳ 250",old:"৳ 350",tag:"ভ্যালু পিক",desc:"দৈনন্দিন প্রয়োজনের একটি ব্যবহারিক পণ্য।",img:"https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=600&q=85"},
+ {id:9,name:"Electric Digital Display Hot Water Tap",cat:"ইলেকট্রিক",price:"৳ 1,850",old:"",tag:"নতুন",desc:"ডিজিটাল তাপমাত্রা ডিসপ্লেসহ ইলেকট্রিক হট ওয়াটার ট্যাপ। বাথরুমে গরম পানি ব্যবহারের জন্য।",img:"gyeser3.jpg"}
 ];
+
 const grid=document.getElementById("productGrid");
 function renderProducts(list){
  if(!list.length){grid.innerHTML='<div class="empty">কোনো পণ্য পাওয়া যায়নি। অন্য নামে খুঁজে দেখুন।</div>';return}

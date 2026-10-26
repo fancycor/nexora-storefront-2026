@@ -211,7 +211,7 @@ document.getElementById("orderForm").addEventListener("submit",function(e){
 
  const message=`Nexora Shop Order\nProduct: ${p.name}\nQuantity: ${qty}\nTotal: Tk ${p.price*qty}\nName: ${name}\nPhone: ${phone}\nDistrict/Thana: ${district}\nAddress: ${address}\nPayment: Cash on Delivery`;
 
- if(WHATSAPP_NUMBER){
+ ifconst WHATSAPP_NUMBER="8801913381682";
    window.open("https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(message),"_blank");
  }else{
    alert("WhatsApp নম্বর এখনো সেট করা হয়নি। অর্ডারের বিবরণ:\n\n"+message);

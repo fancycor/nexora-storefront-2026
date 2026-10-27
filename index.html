@@ -1,110 +1,819 @@
+
 <!DOCTYPE html>
 <html lang="bn">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nexora Shop | Better Products, Brighter Life</title>
-<meta name="description" content="Nexora Shop — দৈনন্দিন প্রয়োজনের দরকারি পণ্য।">
+<meta name="theme-color" content="#0b0b0b">
+<title>Nexora Shop | Premium Everyday Finds</title>
+<meta name="description" content="Nexora Shop — দরকারি পণ্য, প্রিমিয়াম অভিজ্ঞতা এবং সহজ WhatsApp অর্ডার।">
+
 <style>
-:root{--green:#087443;--dark:#12231c;--muted:#66736c;--line:#e6ece8;--bg:#f7faf8}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,"Noto Sans Bengali",sans-serif;color:#18231e;background:#fff}button,input{font:inherit}button{cursor:pointer}
-.topbar{background:#10271d;color:#fff;text-align:center;padding:9px 12px;font-size:13px}
-header{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid var(--line)}
-.nav{max-width:1180px;margin:auto;padding:14px 20px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--dark);font-weight:800;font-size:21px;white-space:nowrap}
-.brand img{width:48px;height:48px;object-fit:contain}.brand span{color:var(--green)}
-.search{display:flex;flex:1;min-width:220px;max-width:560px;border:1px solid #dce5df;border-radius:12px;overflow:hidden;background:#f8faf9}
-.search input{border:0;background:transparent;outline:none;padding:12px 14px;flex:1;min-width:0}.search button{border:0;background:var(--green);color:#fff;padding:0 20px}
-.navlink{margin-left:auto;color:var(--green);font-weight:700;text-decoration:none}
-.hero{background:linear-gradient(120deg,#edf7f0,#f8fbf8);padding:42px 20px}
-.hero-inner{max-width:1180px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:24px}
-.hero h1{font-size:clamp(28px,4vw,46px);line-height:1.2;margin:0 0 14px;color:#153627}.hero p{color:#586b60;max-width:560px;line-height:1.8;margin:0 0 20px}
-.primary{display:inline-block;background:var(--green);color:white;text-decoration:none;padding:12px 20px;border-radius:10px;font-weight:700;border:0}
-.hero-badge{background:#fff;border:1px solid #dcebe0;border-radius:22px;padding:22px;min-width:180px;text-align:center;color:var(--green);font-weight:800}
-.wrap{max-width:1180px;margin:auto;padding:32px 20px}
-.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:18px}.section-head h2{margin:0;font-size:27px}.section-head p{margin:6px 0 0;color:var(--muted)}
-.categories{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:26px}.category{border:1px solid var(--line);background:#fff;padding:10px 16px;border-radius:999px;color:#33463b;cursor:pointer}.category.active,.category:hover{background:#eaf5ee;border-color:#b7d9c3;color:var(--green)}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
-.product{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff;transition:transform .2s,box-shadow .2s}.product:hover{transform:translateY(-3px);box-shadow:0 10px 30px #15362712}
-.product-image{height:290px;background:#f3f6f4;position:relative;display:flex;align-items:center;justify-content:center;cursor:pointer}.product-image img{width:100%;height:100%;object-fit:contain;padding:14px}.pill{position:absolute;top:14px;left:14px;z-index:1;background:#e0f3e6;color:#17653d;border-radius:999px;padding:6px 10px;font-size:12px;font-weight:700}
-.product-info{padding:18px}.product-cat{color:var(--green);font-size:13px;font-weight:700;margin-bottom:7px}.product h3{margin:0 0 9px;font-size:19px;cursor:pointer}.product-desc{color:var(--muted);line-height:1.65;min-height:46px;margin:0 0 13px}.price-row{display:flex;align-items:center;gap:10px;margin-bottom:16px}.price{font-size:22px;font-weight:800;color:var(--green)}.old-price{color:#909a94;text-decoration:line-through}
-.product-actions{display:flex;gap:10px}.order-btn,.details-btn{padding:11px 12px;border-radius:9px;border:0;font-weight:700}.order-btn{background:var(--green);color:white;flex:1}.details-btn{background:#eef5f0;color:var(--green)}
-.empty{grid-column:1/-1;padding:40px;text-align:center;background:#f7faf8;border-radius:12px;color:var(--muted)}
-.features{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.feature{padding:20px;border:1px solid var(--line);border-radius:14px}.feature strong{display:block;margin-bottom:6px}.feature p{margin:0;color:var(--muted);line-height:1.6;font-size:14px}
-footer{background:#10271d;color:#e8f1eb;padding:28px 20px;margin-top:25px}.foot-inner{max-width:1180px;margin:auto;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.foot-inner p{color:#c2d2c8;margin:7px 0}
-.modal{position:fixed;inset:0;background:#0b1711b8;z-index:30;display:none;overflow:auto;padding:22px}.modal.open{display:block}.modal-box{max-width:820px;margin:20px auto;background:#fff;border-radius:18px;overflow:hidden;position:relative}.close{position:absolute;right:12px;top:12px;z-index:2;border:0;border-radius:50%;width:40px;height:40px;background:#edf3ef;font-size:22px}.detail-layout{display:grid;grid-template-columns:1fr 1fr}.detail-image{background:#f3f6f4;min-height:350px;display:flex;align-items:center;justify-content:center}.detail-image img{width:100%;height:100%;max-height:470px;object-fit:contain;padding:20px}.detail-content{padding:34px 26px}.detail-content h2{margin:8px 0 14px;line-height:1.3}.detail-content p{color:var(--muted);line-height:1.8}.qty-row{display:flex;align-items:center;gap:12px;margin:20px 0}.qty-row input{width:80px;padding:10px;border:1px solid var(--line);border-radius:8px}.detail-content .order-btn{width:100%;padding:14px}
-.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#172c21;color:#fff;padding:12px 18px;border-radius:10px;display:none;z-index:50}.toast.show{display:block}
-@media(max-width:650px){.nav{gap:12px}.brand{font-size:19px}.brand img{width:40px;height:40px}.search{order:3;flex-basis:100%;max-width:none}.navlink{font-size:14px}.hero-inner{display:block}.hero-badge{margin-top:22px}.grid{grid-template-columns:1fr;gap:15px}.product-image{height:260px}.features{grid-template-columns:1fr}.detail-layout{grid-template-columns:1fr}.detail-image{min-height:250px;height:270px}.detail-content{padding:22px}.section-head h2{font-size:23px}}
+:root {
+  --black: #0b0b0b;
+  --dark: #111111;
+  --panel: #171717;
+  --gold: #d9b56d;
+  --gold-light: #f5dda0;
+  --text: #f8f4eb;
+  --muted: #b6b0a4;
+  --line: #353027;
+  --green: #087443;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Arial, "Noto Sans Bengali", sans-serif;
+  background: var(--black);
+  color: var(--text);
+}
+button, input { font: inherit; }
+button { cursor: pointer; }
+a { -webkit-tap-highlight-color: transparent; }
+
+.topbar {
+  background: linear-gradient(90deg, #17120a, #30220d, #17120a);
+  color: var(--gold-light);
+  text-align: center;
+  padding: 10px 12px;
+  font-size: 13px;
+  letter-spacing: .3px;
+  border-bottom: 1px solid #5c4722;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(11,11,11,.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav {
+  max-width: 1180px;
+  margin: auto;
+  padding: 13px 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--gold);
+  font-weight: 900;
+  font-size: 22px;
+  white-space: nowrap;
+  letter-spacing: .3px;
+}
+.brand img {
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+.brand span { color: var(--gold); }
+
+.search {
+  display: flex;
+  flex: 1;
+  min-width: 220px;
+  max-width: 560px;
+  border: 1px solid #49402d;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #171717;
+}
+.search input {
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  outline: none;
+  padding: 12px 14px;
+  flex: 1;
+  min-width: 0;
+}
+.search input::placeholder { color: #918b80; }
+.search button {
+  border: 0;
+  background: var(--gold);
+  color: #17120a;
+  padding: 0 18px;
+  font-weight: 800;
+}
+.navlink {
+  margin-left: auto;
+  color: var(--gold);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 85% 35%, #493719 0, transparent 34%),
+    linear-gradient(120deg, #101010, #1a1711 55%, #0b0b0b);
+  border-bottom: 1px solid #3c3020;
+  padding: 64px 20px;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  right: 8%;
+  top: 10%;
+  border: 1px solid #d9b56d36;
+  border-radius: 50%;
+  box-shadow: 0 0 0 24px #d9b56d08, 0 0 0 48px #d9b56d05;
+  pointer-events: none;
+}
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1180px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+.hero h1 {
+  font-size: clamp(32px, 5vw, 54px);
+  line-height: 1.2;
+  margin: 0 0 18px;
+  color: #fff7e7;
+  letter-spacing: -.7px;
+}
+.hero h1 span { color: var(--gold); }
+.hero p {
+  color: #c8c0b1;
+  max-width: 570px;
+  line-height: 1.9;
+  margin: 0 0 25px;
+}
+.primary {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  color: #17120a;
+  text-decoration: none;
+  padding: 14px 23px;
+  border-radius: 9px;
+  font-weight: 900;
+  box-shadow: 0 6px 22px #d9b56d20;
+  transition: transform .2s, box-shadow .2s;
+}
+.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px #d9b56d35;
+}
+.hero-badge {
+  background: linear-gradient(145deg, #211b10, #111);
+  border: 1px solid #8b6b35;
+  border-radius: 18px;
+  padding: 30px 25px;
+  min-width: 220px;
+  text-align: center;
+  color: var(--gold);
+  font-weight: 900;
+  font-size: 23px;
+  line-height: 1.8;
+  box-shadow: 0 15px 45px #0007;
+}
+.hero-badge span {
+  font-size: 12px;
+  color: #d2c5a9;
+  font-weight: 500;
+}
+
+.wrap {
+  max-width: 1180px;
+  margin: auto;
+  padding: 42px 20px;
+}
+.section-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 23px;
+}
+.section-head h2 {
+  margin: 0;
+  font-size: 29px;
+  color: #fff7e7;
+}
+.section-head h2::after {
+  content: "";
+  display: block;
+  width: 52px;
+  height: 3px;
+  background: var(--gold);
+  margin-top: 12px;
+  border-radius: 5px;
+}
+.section-head p {
+  margin: 9px 0 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.categories {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 27px;
+}
+.category {
+  border: 1px solid #49402d;
+  background: #151515;
+  padding: 10px 17px;
+  border-radius: 999px;
+  color: #d4c9b2;
+  transition: all .2s;
+}
+.category.active, .category:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #17120a;
+  font-weight: 800;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+.product {
+  border: 1px solid #332d22;
+  border-radius: 15px;
+  overflow: hidden;
+  background: linear-gradient(160deg, #1a1a1a, #111);
+  transition: transform .25s, border-color .25s, box-shadow .25s;
+}
+.product:hover {
+  transform: translateY(-5px);
+  border-color: #9c793d;
+  box-shadow: 0 15px 35px #0007;
+}
+.product-image {
+  height: 270px;
+  background: #f7f5ef;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+}
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 13px;
+  transition: transform .3s;
+}
+.product:hover .product-image img { transform: scale(1.04); }
+
+.pill {
+  position: absolute;
+  top: 13px;
+  left: 13px;
+  z-index: 1;
+  background: #201a0e;
+  color: var(--gold-light);
+  border: 1px solid #94723a;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.product-info { padding: 19px; }
+.product-cat {
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 9px;
+}
+.product h3 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #fff7e7;
+  cursor: pointer;
+}
+.product-desc {
+  color: #b9b3a7;
+  line-height: 1.75;
+  font-size: 14px;
+  min-height: 48px;
+  margin: 0 0 15px;
+}
+.price-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 17px;
+}
+.price {
+  font-size: 23px;
+  font-weight: 900;
+  color: var(--gold);
+}
+.old-price {
+  color: #928b7d;
+  text-decoration: line-through;
+}
+.product-actions { display: flex; gap: 9px; }
+.order-btn, .details-btn {
+  padding: 11px 10px;
+  border-radius: 8px;
+  font-weight: 800;
+  transition: filter .2s, transform .2s;
+}
+.order-btn {
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  color: #17120a;
+  border: 0;
+  flex: 1;
+}
+.details-btn {
+  background: transparent;
+  color: var(--gold);
+  border: 1px solid #786035;
+}
+.order-btn:hover, .details-btn:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+.empty {
+  grid-column: 1/-1;
+  padding: 40px;
+  text-align: center;
+  background: #171717;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  color: var(--muted);
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.feature {
+  padding: 24px;
+  background: linear-gradient(145deg, #191919, #101010);
+  border: 1px solid #3b3325;
+  border-radius: 13px;
+}
+.feature strong {
+  display: block;
+  color: var(--gold-light);
+  margin-bottom: 10px;
+}
+.feature p {
+  margin: 0;
+  color: #b9b3a7;
+  line-height: 1.8;
+  font-size: 14px;
+}
+
+footer {
+  background: #080808;
+  border-top: 1px solid #4a3920;
+  color: #f8f4eb;
+  padding: 32px 20px;
+  margin-top: 15px;
+}
+.foot-inner {
+  max-width: 1180px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.foot-inner strong { color: var(--gold); }
+.foot-inner p {
+  color: #b9b3a7;
+  margin: 8px 0;
+  line-height: 1.7;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: #000d;
+  z-index: 30;
+  display: none;
+  overflow: auto;
+  padding: 22px;
+}
+.modal.open { display: block; }
+.modal-box {
+  max-width: 820px;
+  margin: 20px auto;
+  background: #151515;
+  border: 1px solid #6b5129;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 20px 70px #0009;
+}
+.close {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  z-index: 2;
+  border: 1px solid #6b5129;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background: #201a10;
+  color: var(--gold);
+  font-size: 22px;
+}
+.detail-layout { display: grid; grid-template-columns: 1fr 1fr; }
+.detail-image {
+  background: #f7f5ef;
+  min-height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.detail-image img {
+  width: 100%;
+  height: 100%;
+  max-height: 470px;
+  object-fit: contain;
+  padding: 20px;
+}
+.detail-content { padding: 34px 26px; }
+.detail-content h2 {
+  margin: 8px 0 14px;
+  line-height: 1.5;
+  color: #fff7e7;
+}
+.detail-content p { color: #c3bcaf; line-height: 1.8; }
+.qty-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0;
+}
+.qty-row input {
+  width: 80px;
+  padding: 10px;
+  background: #202020;
+  color: white;
+  border: 1px solid #6b5129;
+  border-radius: 8px;
+}
+.detail-content .order-btn { width: 100%; padding: 14px; }
+
+.toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #201a10;
+  color: var(--gold-light);
+  border: 1px solid #8b6b35;
+  padding: 12px 18px;
+  border-radius: 10px;
+  display: none;
+  z-index: 50;
+}
+.toast.show { display: block; }
+
+@media(max-width:850px) {
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hero-badge { min-width: 185px; padding: 23px 16px; }
+}
+@media(max-width:650px) {
+  .nav { gap: 12px; padding: 12px 15px; }
+  .brand { font-size: 19px; }
+  .brand img { width: 39px; height: 39px; }
+  .search { order: 3; flex-basis: 100%; max-width: none; }
+  .navlink { font-size: 14px; }
+  .hero { padding: 42px 18px; }
+  .hero-inner { display: block; }
+  .hero h1 { font-size: 35px; }
+  .hero-badge { margin-top: 26px; display: inline-block; }
+  .hero::after { right: -120px; top: 45%; }
+  .wrap { padding: 32px 15px; }
+  .section-head h2 { font-size: 25px; }
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .product-image { height: 175px; }
+  .product-info { padding: 12px; }
+  .product h3 { font-size: 15px; }
+  .product-desc { font-size: 13px; min-height: 0; }
+  .price { font-size: 19px; }
+  .product-actions { flex-direction: column; }
+  .order-btn, .details-btn { width: 100%; font-size: 12px; padding: 10px 5px; }
+  .features { grid-template-columns: 1fr; }
+  .detail-layout { grid-template-columns: 1fr; }
+  .detail-image { min-height: 230px; height: 250px; }
+  .detail-content { padding: 22px; }
+  .modal { padding: 10px; }
+}
+@media(max-width:360px) {
+  .grid { grid-template-columns: 1fr; }
+  .product-image { height: 240px; }
+}
 </style>
 </head>
+
 <body>
-<div class="topbar">Nexora Shop — আপনার দৈনন্দিন প্রয়োজনের দরকারি পণ্য</div>
+<div class="topbar">✦ NEXORA SHOP — স্মার্ট পছন্দ, প্রিমিয়াম অভিজ্ঞতা ✦</div>
+
 <header id="home">
   <nav class="nav">
-    <a class="brand" href="#home" aria-label="Nexora Shop home"><img src="NEWLOG.png" alt="Nexora Shop Logo" onerror="this.style.display='none'"><span>Nexora Shop</span></a>
-    <form class="search" id="searchForm"><input id="searchInput" type="search" placeholder="আপনার পছন্দের পণ্য খুঁজুন..." aria-label="পণ্য খুঁজুন"><button type="submit">খুঁজুন</button></form>
-    <a class="navlink" href="#products">সব পণ্য</a>
+    <a class="brand" href="#home" aria-label="Nexora Shop home">
+      <img src="NEWLOG.png" alt="Nexora Shop Logo" onerror="this.style.display='none'">
+      <span>Nexora Shop</span>
+    </a>
+    <form class="search" id="searchForm">
+      <input id="searchInput" type="search" placeholder="আপনার পছন্দের পণ্য খুঁজুন..." aria-label="পণ্য খুঁজুন">
+      <button type="submit">খুঁজুন</button>
+    </form>
+    <a class="navlink" href="#products">সব পণ্য ↓</a>
   </nav>
 </header>
+
 <section class="hero">
- <div class="hero-inner">
-  <div><h1>প্রয়োজনীয় পণ্য,<br>সহজ কেনাকাটা</h1><p>Nexora Shop-এ দরকারি পণ্য দেখুন, বিস্তারিত জানুন এবং WhatsApp-এ সহজে অর্ডার করুন। নতুন পণ্য ধীরে ধীরে যোগ করা হবে।</p><a class="primary" href="#products">পণ্য দেখুন</a></div>
-  <div class="hero-badge">NEXORA SHOP<br><span style="font-size:14px;color:#62766a;font-weight:500">Better Products • Brighter Life</span></div>
- </div>
+  <div class="hero-inner">
+    <div>
+      <h1>স্মার্ট পছন্দ,<br><span>সেরা অভিজ্ঞতা।</span></h1>
+      <p>Nexora Shop-এ খুঁজে নিন আপনার দৈনন্দিন প্রয়োজনের দরকারি পণ্য। পণ্য দেখুন, দাম জানুন এবং WhatsApp-এ সহজে অর্ডার করুন।</p>
+      <a class="primary" href="#products">✦ আমাদের পণ্য দেখুন</a>
+    </div>
+    <div class="hero-badge">
+      NEXORA SHOP
+      <br>
+      <span>BETTER PRODUCTS • BRIGHTER LIFE</span>
+    </div>
+  </div>
 </section>
+
 <main>
 <section class="wrap" id="products">
- <div class="section-head"><div><h2>আমাদের পণ্য</h2><p>পণ্যের ছবিতে বা নামে ক্লিক করে বিস্তারিত দেখুন।</p></div></div>
- <div class="categories" id="categories">
-  <button class="category active" data-category="সব">সব পণ্য</button>
-  <button class="category" data-category="হোম">হোম</button>
-  <button class="category" data-category="ইলেকট্রিক">ইলেকট্রিক</button>
- </div>
- <div class="grid" id="grid"></div>
+  <div class="section-head">
+    <div>
+      <h2>আমাদের পণ্য</h2>
+      <p>আপনার পছন্দের পণ্য বেছে নিন। অর্ডারের জন্য WhatsApp বাটনে চাপ দিন।</p>
+    </div>
+  </div>
+
+  <div class="categories" id="categories">
+    <button class="category active" data-category="সব">সব পণ্য</button>
+    <button class="category" data-category="হোম">হোম</button>
+    <button class="category" data-category="ইলেকট্রিক">ইলেকট্রিক</button>
+  </div>
+
+  <div class="grid" id="grid"></div>
 </section>
+
 <section class="wrap">
- <div class="section-head"><div><h2>কেন Nexora Shop?</h2><p>সহজে পণ্য দেখুন এবং অর্ডার করুন।</p></div></div>
- <div class="features">
-  <div class="feature"><strong>🛍️ দরকারি পণ্য</strong><p>দৈনন্দিন ব্যবহারের পণ্য এক জায়গায়।</p></div>
-  <div class="feature"><strong>💬 WhatsApp অর্ডার</strong><p>পণ্য সম্পর্কে জানতে বা অর্ডার করতে সরাসরি যোগাযোগ করুন।</p></div>
-  <div class="feature"><strong>🚚 ডেলিভারি তথ্য</strong><p>অর্ডারের সময় আপনার ঠিকানা ও ডেলিভারি চার্জ নিশ্চিত করুন।</p></div>
- </div>
+  <div class="section-head">
+    <div>
+      <h2>কেন Nexora Shop?</h2>
+      <p>সহজ কেনাকাটা, সরাসরি যোগাযোগ এবং প্রয়োজনীয় পণ্যের সংগ্রহ।</p>
+    </div>
+  </div>
+
+  <div class="features">
+    <div class="feature">
+      <strong>✦ দরকারি পণ্যের সংগ্রহ</strong>
+      <p>দৈনন্দিন ব্যবহারের বিভিন্ন পণ্য এক জায়গায় খুঁজে নিন।</p>
+    </div>
+    <div class="feature">
+      <strong>✦ সহজ WhatsApp অর্ডার</strong>
+      <p>পণ্য সম্পর্কে জানতে বা অর্ডার করতে সরাসরি যোগাযোগ করুন।</p>
+    </div>
+    <div class="feature">
+      <strong>✦ ডেলিভারি তথ্য</strong>
+      <p>অর্ডার নিশ্চিত করার আগে ডেলিভারি চার্জ ও ঠিকানা জানিয়ে দিন।</p>
+    </div>
+  </div>
 </section>
 </main>
-<footer><div class="foot-inner"><div><strong style="font-size:21px">Nexora Shop</strong><p>Better Products • Brighter Life</p></div><div><strong>যোগাযোগ ও অর্ডার</strong><p>WhatsApp-এ অর্ডার করুন</p></div></div></footer>
+
+<footer>
+  <div class="foot-inner">
+    <div>
+      <strong style="font-size:23px">Nexora Shop</strong>
+      <p>Better Products • Brighter Life</p>
+    </div>
+    <div>
+      <strong>যোগাযোগ ও অর্ডার</strong>
+      <p>WhatsApp-এ অর্ডার করতে পণ্যের বাটনে চাপ দিন।</p>
+    </div>
+  </div>
+</footer>
+
 <div class="modal" id="detailModal" role="dialog" aria-modal="true" aria-label="পণ্যের বিস্তারিত">
- <div class="modal-box"><button class="close" id="closeModal" aria-label="বন্ধ করুন">×</button><div class="detail-layout">
-  <div class="detail-image"><img id="detailImg" src="" alt=""></div>
-  <div class="detail-content"><div class="product-cat" id="detailCat"></div><h2 id="detailName"></h2><div class="price-row"><span class="price" id="detailPrice"></span><span class="old-price" id="detailOld"></span></div><p id="detailDesc"></p><div class="qty-row"><label for="detailQty">পরিমাণ:</label><input id="detailQty" type="number" min="1" value="1"></div><button class="order-btn" id="detailOrder">WhatsApp-এ অর্ডার করুন</button><p style="font-size:13px">ডেলিভারি চার্জ ও পেমেন্টের তথ্য অর্ডার নিশ্চিত করার সময় জেনে নিন।</p></div>
- </div></div>
+  <div class="modal-box">
+    <button class="close" id="closeModal" aria-label="বন্ধ করুন">×</button>
+    <div class="detail-layout">
+      <div class="detail-image">
+        <img id="detailImg" src="" alt="">
+      </div>
+      <div class="detail-content">
+        <div class="product-cat" id="detailCat"></div>
+        <h2 id="detailName"></h2>
+        <div class="price-row">
+          <span class="price" id="detailPrice"></span>
+          <span class="old-price" id="detailOld"></span>
+        </div>
+        <p id="detailDesc"></p>
+        <div class="qty-row">
+          <label for="detailQty">পরিমাণ:</label>
+          <input id="detailQty" type="number" min="1" value="1">
+        </div>
+        <button class="order-btn" id="detailOrder">WhatsApp-এ অর্ডার করুন</button>
+        <p style="font-size:13px">ডেলিভারি চার্জ ও পেমেন্টের তথ্য অর্ডার নিশ্চিত করার সময় জেনে নিন।</p>
+      </div>
+    </div>
+  </div>
 </div>
+
 <div class="toast" id="toast"></div>
+
 <script>
 const WHATSAPP_NUMBER = "8801913381682";
+
 const products = [
-
-
-{id:1,name:"450ML LED Temperature Display Bottle",cat:"হোম",price:"৳ 550",old:"৳ 600",tag:"জনপ্রিয়",desc:"তাপমাত্রা দেখানো যায় এমন 450ML ট্রাভেল বোতল।",img:"450ml-Stainless-Steel-Coffee-Cup-Smart-LED-Temperature-Display-Thermos-Bottle-Coffee-Mug-Travel-Mug-Insulated.avif"},
-{id:9,name:"Electric Digital Display Hot Water Tap",cat:"ইলেকট্রিক",price:"৳ 1,850",old:"",tag:"নতুন",desc:"ডিজিটাল তাপমাত্রা ডিসপ্লেসহ ইলেকট্রিক হট ওয়াটার ট্যাপ।",img:"gyeser3.jpg"},
-{id:10,name:"Kitchen Cleaner Foam 500ml",cat:"হোম",price:"৳ 350",old:"",tag:"নতুন",desc:"রান্নাঘরের তেল-চিটচিটে দাগ পরিষ্কারের জন্য Kitchen Cleaner Foam।",img:"CLEAN.png"}
+  {
+    id: 1,
+    name: "450ML LED Temperature Display Bottle",
+    cat: "হোম",
+    price: "৳ 550",
+    old: "৳ 600",
+    tag: "জনপ্রিয়",
+    desc: "তাপমাত্রা দেখানো যায় এমন 450ML ট্রাভেল বোতল।",
+    img: "450ml-Stainless-Steel-Coffee-Cup-Smart-LED-Temperature-Display-Thermos-Bottle-Coffee-Mug-Travel-Mug-Insulated.avif"
+  },
+  {
+    id: 9,
+    name: "Electric Digital Display Hot Water Tap",
+    cat: "ইলেকট্রিক",
+    price: "৳ 1,850",
+    old: "",
+    tag: "নতুন",
+    desc: "ডিজিটাল তাপমাত্রা ডিসপ্লেসহ ইলেকট্রিক হট ওয়াটার ট্যাপ।",
+    img: "gyeser3.jpg"
+  },
+  {
+    id: 10,
+    name: "Kitchen Cleaner Foam 500ml",
+    cat: "হোম",
+    price: "৳ 350",
+    old: "",
+    tag: "নতুন",
+    desc: "রান্নাঘরের তেল-চিটচিটে দাগ পরিষ্কারের জন্য Kitchen Cleaner Foam।",
+    img: "CLEAN.png"
+  }
 ];
-const grid=document.getElementById("grid");
-function renderProducts(list){
 
- if(!list.length){grid.innerHTML='<div class="empty">কোনো পণ্য পাওয়া যায়নি। অন্য নামে খুঁজে দেখুন।</div>';return;}
- grid.innerHTML=list.map(p=>`<article class="product"><div class="product-image" data-open="${p.id}"><span class="pill">${p.tag}</span><img loading="lazy" src="${p.img}" alt="${p.name}"></div><div class="product-info"><div class="product-cat">${p.cat}</div><h3 data-open="${p.id}">${p.name}</h3><p class="product-desc">${p.desc}</p><div class="price-row"><span class="price">${p.price}</span><span class="old-price">${p.old}</span></div><div class="product-actions"><button class="order-btn" data-order="${p.id}">WhatsApp-এ অর্ডার</button><button class="details-btn" data-open="${p.id}">বিস্তারিত</button></div></div></article>`).join("");
+const grid = document.getElementById("grid");
+
+function renderProducts(list) {
+  if (!list.length) {
+    grid.innerHTML = '<div class="empty">কোনো পণ্য পাওয়া যায়নি। অন্য নামে খুঁজে দেখুন।</div>';
+    return;
+  }
+
+  grid.innerHTML = list.map(p => `
+    <article class="product">
+      <div class="product-image" data-open="${p.id}">
+        <span class="pill">${p.tag}</span>
+        <img loading="lazy" src="${p.img}" alt="${p.name}" onerror="this.onerror=null;this.alt='ছবি পাওয়া যায়নি';this.style.display='none'">
+      </div>
+      <div class="product-info">
+        <div class="product-cat">${p.cat}</div>
+        <h3 data-open="${p.id}">${p.name}</h3>
+        <p class="product-desc">${p.desc}</p>
+        <div class="price-row">
+          <span class="price">${p.price}</span>
+          <span class="old-price">${p.old}</span>
+        </div>
+        <div class="product-actions">
+          <button class="order-btn" data-order="${p.id}">WhatsApp-এ অর্ডার</button>
+          <button class="details-btn" data-open="${p.id}">বিস্তারিত</button>
+        </div>
+      </div>
+    </article>
+  `).join("");
 }
-function showToast(msg){const t=document.getElementById("toast");t.textContent=msg;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),3000)}
-function contactWhatsApp(message){window.open("https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(message),"_blank","noopener");}
-function orderProduct(id,qty=1){const p=products.find(x=>x.id===id);if(!p)return;contactWhatsApp(`আসসালামু আলাইকুম, আমি এই পণ্যটি অর্ডার করতে চাই:\nপণ্য: ${p.name}\nদাম: ${p.price}\nপরিমাণ: ${qty}টি\nআমার ঠিকানা ও ডেলিভারি চার্জ জানাবেন।`);}
-function showProductDetails(id){const p=products.find(x=>x.id===id);if(!p)return;document.getElementById("detailImg").src=p.img;document.getElementById("detailImg").alt=p.name;document.getElementById("detailCat").textContent=p.cat;document.getElementById("detailName").textContent=p.name;document.getElementById("detailPrice").textContent=p.price;document.getElementById("detailOld").textContent=p.old;document.getElementById("detailDesc").textContent=p.desc;document.getElementById("detailQty").value=1;document.getElementById("detailOrder").onclick=()=>orderProduct(id,Math.max(1,parseInt(document.getElementById("detailQty").value,10)||1));document.getElementById("detailModal").classList.add("open");document.body.style.overflow="hidden";}
-function closeDetails(){document.getElementById("detailModal").classList.remove("open");document.body.style.overflow="";}
-grid.addEventListener("click",e=>{const open=e.target.closest("[data-open]");const order=e.target.closest("[data-order]");if(open)showProductDetails(Number(open.dataset.open));if(order)orderProduct(Number(order.dataset.order));});
-document.getElementById("closeModal").addEventListener("click",closeDetails);
-document.getElementById("detailModal").addEventListener("click",e=>{if(e.target.id==="detailModal")closeDetails();});
-document.addEventListener("keydown",e=>{if(e.key==="Escape")closeDetails();});
-document.getElementById("searchForm").addEventListener("submit",e=>{e.preventDefault();const q=document.getElementById("searchInput").value.trim().toLowerCase();renderProducts(products.filter(p=>(p.name+" "+p.cat+" "+p.desc).toLowerCase().includes(q)));document.getElementById("products").scrollIntoView({behavior:"smooth"});document.querySelectorAll("[data-category]").forEach(x=>x.classList.remove("active"));});
-document.querySelectorAll("[data-category]").forEach(el=>el.addEventListener("click",()=>{const c=el.dataset.category;document.querySelectorAll("[data-category]").forEach(x=>x.classList.toggle("active",x===el));renderProducts(c==="সব"?products:products.filter(p=>p.cat===c));}));
+
+function contactWhatsApp(message) {
+  const url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
+  window.open(url, "_blank", "noopener");
+}
+
+function orderProduct(id, qty = 1) {
+  const p = products.find(x => x.id === id);
+  if (!p) return;
+
+  contactWhatsApp(
+    `আসসালামু আলাইকুম, আমি এই পণ্যটি অর্ডার করতে চাই:\n` +
+    `পণ্য: ${p.name}\n` +
+    `দাম: ${p.price}\n` +
+    `পরিমাণ: ${qty}টি\n` +
+    `আমার ঠিকানা ও ডেলিভারি চার্জ জানাবেন।`
+  );
+}
+
+function showProductDetails(id) {
+  const p = products.find(x => x.id === id);
+  if (!p) return;
+
+  document.getElementById("detailImg").src = p.img;
+  document.getElementById("detailImg").alt = p.name;
+  document.getElementById("detailCat").textContent = p.cat;
+  document.getElementById("detailName").textContent = p.name;
+  document.getElementById("detailPrice").textContent = p.price;
+  document.getElementById("detailOld").textContent = p.old;
+  document.getElementById("detailDesc").textContent = p.desc;
+  document.getElementById("detailQty").value = 1;
+
+  document.getElementById("detailOrder").onclick = () => {
+    const qty = Math.max(
+      1,
+      parseInt(document.getElementById("detailQty").value, 10) || 1
+    );
+    orderProduct(id, qty);
+  };
+
+  document.getElementById("detailModal").classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+
+function closeDetails() {
+  document.getElementById("detailModal").classList.remove("open");
+  document.body.style.overflow = "";
+}
+
+grid.addEventListener("click", e => {
+  const open = e.target.closest("[data-open]");
+  const order = e.target.closest("[data-order]");
+
+  if (open) showProductDetails(Number(open.dataset.open));
+  if (order) orderProduct(Number(order.dataset.order));
+});
+
+document.getElementById("closeModal").addEventListener("click", closeDetails);
+
+document.getElementById("detailModal").addEventListener("click", e => {
+  if (e.target.id === "detailModal") closeDetails();
+});
+
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") closeDetails();
+});
+
+document.getElementById("searchForm").addEventListener("submit", e => {
+  e.preventDefault();
+
+  const q = document.getElementById("searchInput").value.trim().toLowerCase();
+
+  renderProducts(
+    products.filter(p =>
+      (p.name + " " + p.cat + " " + p.desc).toLowerCase().includes(q)
+    )
+  );
+
+  document.getElementById("products").scrollIntoView({ behavior: "smooth" });
+  document.querySelectorAll("[data-category]").forEach(x => x.classList.remove("active"));
+});
+
+document.querySelectorAll("[data-category]").forEach(el => {
+  el.addEventListener("click", () => {
+    const c = el.dataset.category;
+
+    document.querySelectorAll("[data-category]").forEach(x => {
+      x.classList.toggle("active", x === el);
+    });
+
+    renderProducts(
+      c === "সব" ? products : products.filter(p => p.cat === c)
+    );
+  });
+});
+
 renderProducts(products);
 </script>
 </body>

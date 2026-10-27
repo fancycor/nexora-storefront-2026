@@ -91,9 +91,6 @@ const products = [
 const grid=document.getElementById("grid");
 function renderProducts(list){
 
-const grid=document.getElementById("grid");
-function renderProducts(list){
-
  if(!list.length){grid.innerHTML='<div class="empty">কোনো পণ্য পাওয়া যায়নি। অন্য নামে খুঁজে দেখুন।</div>';return;}
  grid.innerHTML=list.map(p=>`<article class="product"><div class="product-image" data-open="${p.id}"><span class="pill">${p.tag}</span><img loading="lazy" src="${p.img}" alt="${p.name}"></div><div class="product-info"><div class="product-cat">${p.cat}</div><h3 data-open="${p.id}">${p.name}</h3><p class="product-desc">${p.desc}</p><div class="price-row"><span class="price">${p.price}</span><span class="old-price">${p.old}</span></div><div class="product-actions"><button class="order-btn" data-order="${p.id}">WhatsApp-এ অর্ডার</button><button class="details-btn" data-open="${p.id}">বিস্তারিত</button></div></div></article>`).join("");
 }
